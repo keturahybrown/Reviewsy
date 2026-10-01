@@ -10,6 +10,7 @@ export default class Deck {
     #cardAmount;
     #subjectId; // can only be apart of one subject 
     #cardIds;
+    #CARD_LIMIT = 10; 
 
     constructor(id, userId, subjectId, name, cardAmount, cardIds = []){
         this.#id = id;
@@ -21,7 +22,11 @@ export default class Deck {
     }
 
     addCard(){
-        // max amount allowed is 10 per deck 
+        // check if the max amount is reached 
+        if (!this.#check_reached_card_limit){
+
+        }
+        
     }
 
     changeName(){
@@ -40,6 +45,12 @@ export default class Deck {
 
     }
 
-
+    #check_reached_card_limit(){
+        if(this.#cardAmount === this.#CARD_LIMIT){
+            return true
+        } else {
+            return false 
+        }
+    }
 
 }

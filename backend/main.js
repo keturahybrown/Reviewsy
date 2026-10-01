@@ -4,4 +4,4 @@ let card = new Card(1, [5], 'hi', 'world');
 
 let cardPropeties = card.viewCard();
 
-console.log(cardPropeties.front);
+console.log(cardPropeties);
