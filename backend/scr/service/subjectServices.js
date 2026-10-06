@@ -13,7 +13,15 @@ export default class subjectServices{
     }
 
     viewSubs(){
-        return SubRepo.viewAllSubs(this.#userId) 
+        const subs = SubRepo.viewAllSubs(this.#userId) 
+        return subs.map(
+            sub => new Subject(
+                sub.id,
+                sub.user,
+                sub.name,
+                sub.decks
+            )
+        )
     }
 
     createSubject(name){
