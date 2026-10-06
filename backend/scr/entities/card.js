@@ -34,14 +34,26 @@ export default class Card{
         }
     }
 
-    addToDeck(){
+    addToDeck(deckId){
+        if (!this.#checkInDeck(deckId)){
+            this.#deckIds.push(deckId); 
+            return 'Card add to Deck'
+        } else {
+            return 'Card already In Deck'
+        }
         
     }
 
-    removeFromDeck(){
-
+    removeFromDeck(deckId){
+        if (this.#checkInDeck(deckId)){
+            const newDecks = this.#deckIds.filter(item => item !== deckId);
+            this.#deckIds = newDecks; 
+        }
     }
 
+    #checkInDeck(deckId){
+        return this.#deckIds.includes(deckId)
+    }
 
 
 }

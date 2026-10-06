@@ -21,19 +21,19 @@ export default class Deck {
         this.#cardIds = cardIds
     }
 
-    addCard(){
+    addCard(cardId){
         // check if the max amount is reached 
         if (!this.#check_reached_card_limit){
-
-        }
+            this.#cardIds.push(cardId); 
+        } 
         
     }
 
-    changeName(){
-
+    changeName(newName){
+        this.#name = String(newName); 
     }
 
-    deleteCard(){
+    deleteCard(cardId){
 
     }
 
