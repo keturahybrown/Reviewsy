@@ -41,13 +41,15 @@ export default class Card{
         } else {
             return 'Card already In Deck'
         }
-        
     }
 
     removeFromDeck(deckId){
         if (this.#checkInDeck(deckId)){
             const newDecks = this.#deckIds.filter(item => item !== deckId);
             this.#deckIds = newDecks; 
+            return 'Removed from Deck'
+        } else {
+            return 'Not in Deck'
         }
     }
 
