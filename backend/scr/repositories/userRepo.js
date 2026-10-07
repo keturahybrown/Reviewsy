@@ -1,8 +1,9 @@
 
 import mongoose from 'mongoose'; 
-
+import { conn } from '../config/config';
 
 export default class UserRepo{
+
 
     static addUserToDB(username, password, displayName){
 
